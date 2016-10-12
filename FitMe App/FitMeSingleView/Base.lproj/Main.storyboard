@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3MG-OG-04I">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Reveal ComparisonVC-->
+        <scene sceneID="21R-Pc-FHe">
+            <objects>
+                <viewController id="3MG-OG-04I" customClass="revealComparisonVC" customModule="FitMeSingleView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Ep-nH-fxU"/>
+                        <viewControllerLayoutGuide type="bottom" id="EtY-SU-bwU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sFg-y9-ejk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cec-pm-vBb">
+                                <rect key="frame" x="277" y="512" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="Clm-7O-AD7"/>
+                                </constraints>
+                                <state key="normal" title="O"/>
+                                <connections>
+                                    <action selector="toggleComparisonStyleButtonTouched:" destination="3MG-OG-04I" eventType="touchUpInside" id="xwH-Sa-kLw"/>
+                                </connections>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJC-2f-qhm">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Progress View" id="l3a-BX-wE0">
+                                        <barButtonItem key="rightBarButtonItem" title="Add Photos" id="WTj-Oe-Qui">
+                                            <connections>
+                                                <action selector="addPhotosButtonTouched:" destination="3MG-OG-04I" id="AS3-X4-4Mm"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EtY-SU-bwU" firstAttribute="top" secondItem="cec-pm-vBb" secondAttribute="bottom" constant="58" id="0Xt-iU-InC"/>
+                            <constraint firstItem="EJC-2f-qhm" firstAttribute="top" secondItem="sFg-y9-ejk" secondAttribute="top" id="5VO-Fp-rfj"/>
+                            <constraint firstItem="EJC-2f-qhm" firstAttribute="centerX" secondItem="cec-pm-vBb" secondAttribute="centerX" id="BJs-OJ-q91"/>
+                            <constraint firstAttribute="trailing" secondItem="EJC-2f-qhm" secondAttribute="trailing" id="VvK-lY-3g1"/>
+                            <constraint firstItem="EJC-2f-qhm" firstAttribute="leading" secondItem="sFg-y9-ejk" secondAttribute="leading" id="pOe-n3-ggg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="toggleComparisonStyleButton" destination="cec-pm-vBb" id="o6f-dw-uO0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X3f-sl-Apk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-377" y="324"/>
+        </scene>
+        <!--Progress Feed-->
+        <scene sceneID="Oz3-CA-6No">
+            <objects>
+                <tableViewController title="Progress Feed" id="b04-al-HTF" customClass="ProgressFeedTVC" customModule="FitMeSingleView" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="350" sectionHeaderHeight="28" sectionFooterHeight="28" id="fa1-5M-JYt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" rowHeight="350" id="SPJ-8U-x0h" customClass="UserTVCell" customModule="FitMeSingleView" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="350"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SPJ-8U-x0h" id="qJx-rr-kgw">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="349.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qyM-X4-CgU">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="350"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="5" id="09j-TM-e2B">
+                                                <size key="itemSize" width="601" height="350"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="fOH-Ym-Etm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="601" height="350"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                        <rect key="frame" x="0.0" y="0.0" width="601" height="350"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                    <size key="customSize" width="601" height="350"/>
+                                                </collectionViewCell>
+                                            </cells>
+                                        </collectionView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="qyM-X4-CgU" firstAttribute="leading" secondItem="qJx-rr-kgw" secondAttribute="leading" id="Rk4-w1-YLd"/>
+                                        <constraint firstItem="qyM-X4-CgU" firstAttribute="centerY" secondItem="qJx-rr-kgw" secondAttribute="centerY" id="ZhO-qo-JUQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="qyM-X4-CgU" secondAttribute="trailing" id="eKu-93-LTg"/>
+                                        <constraint firstItem="qyM-X4-CgU" firstAttribute="top" secondItem="qJx-rr-kgw" secondAttribute="top" id="hog-hJ-sHx"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="userCollectionView" destination="qyM-X4-CgU" id="NgV-0u-rBZ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="b04-al-HTF" id="X1i-8j-BiB"/>
+                            <outlet property="delegate" destination="b04-al-HTF" id="lOC-6Z-puK"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zcY-Ix-7zq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="301" y="311"/>
+        </scene>
+        <!--Progress PicsVC-->
+        <scene sceneID="AuS-Uw-ysf">
+            <objects>
+                <viewController id="Nbm-vh-KqD" customClass="ProgressPicsVC" customModule="FitMeSingleView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dJn-1g-rnX"/>
+                        <viewControllerLayoutGuide type="bottom" id="kZc-iv-ZnX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kg3-gF-a4e">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pg7-WX-iZN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1026" y="316"/>
+        </scene>
+        <!--Image Picker View Controller-->
+        <scene sceneID="l45-dS-Efe">
+            <objects>
+                <viewController id="AHx-xn-9c8" customClass="ImagePickerViewController" customModule="FitMeSingleView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="viY-Np-Pau"/>
+                        <viewControllerLayoutGuide type="bottom" id="RNY-X2-Aai"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CAq-bN-TgM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWK-vc-SFJ">
+                                <rect key="frame" x="0.0" y="539" width="300" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="oNF-ML-ow2"/>
+                                </constraints>
+                                <state key="normal" title="Choose Progress Pic"/>
+                                <connections>
+                                    <action selector="loadImageTapped:" destination="AHx-xn-9c8" eventType="touchUpInside" id="ocv-ov-njx"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FyC-Vy-ovf">
+                                <rect key="frame" x="31" y="20" width="538" height="511"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5f-dh-JQg">
+                                <rect key="frame" x="308" y="539" width="292" height="61"/>
+                                <state key="normal" title="Take Progress Pic"/>
+                                <connections>
+                                    <action selector="takeImageTapped:" destination="AHx-xn-9c8" eventType="touchUpInside" id="HLr-5K-4O0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sWK-vc-SFJ" firstAttribute="bottom" secondItem="RNY-X2-Aai" secondAttribute="top" id="5UY-ub-cIn"/>
+                            <constraint firstItem="FyC-Vy-ovf" firstAttribute="leading" secondItem="CAq-bN-TgM" secondAttribute="leadingMargin" constant="11" id="O6c-me-6PD"/>
+                            <constraint firstItem="sWK-vc-SFJ" firstAttribute="top" secondItem="FyC-Vy-ovf" secondAttribute="bottom" constant="8" symbolic="YES" id="eNL-XR-eZU"/>
+                            <constraint firstItem="sWK-vc-SFJ" firstAttribute="leading" secondItem="CAq-bN-TgM" secondAttribute="leading" id="nXS-bG-1dd"/>
+                            <constraint firstItem="FyC-Vy-ovf" firstAttribute="top" secondItem="viY-Np-Pau" secondAttribute="bottom" id="q6S-fG-BLL"/>
+                            <constraint firstAttribute="trailing" secondItem="sWK-vc-SFJ" secondAttribute="trailing" id="qy1-8C-C3Z"/>
+                            <constraint firstItem="FyC-Vy-ovf" firstAttribute="centerX" secondItem="sWK-vc-SFJ" secondAttribute="centerX" id="rRL-Ic-3Mu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="progressPicImageView" destination="FyC-Vy-ovf" id="8N3-Zz-FNq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kca-NJ-Pm7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1748" y="37"/>
+        </scene>
+        <!--Collevtion ViewVC-->
+        <scene sceneID="mQL-0O-fbC">
+            <objects>
+                <viewController id="l8K-83-xcl" customClass="CollevtionViewVC" customModule="FitMeSingleView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n8C-M7-FbA"/>
+                        <viewControllerLayoutGuide type="bottom" id="tW2-XL-01T"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IWD-wp-ag1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0rG-mz-8XE">
+                                <rect key="frame" x="81" y="68" width="438" height="381"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ap7-nx-L3p">
+                                    <size key="itemSize" width="170" height="160"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="rhK-S2-zvf" customClass="MyCollectionViewCell" customModule="FitMeSingleView" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="160"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="170" height="160"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rds-re-RX9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="170" height="160"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="Rds-re-RX9" firstAttribute="top" secondItem="rhK-S2-zvf" secondAttribute="top" id="Jk5-3i-IFv"/>
+                                            <constraint firstItem="Rds-re-RX9" firstAttribute="leading" secondItem="rhK-S2-zvf" secondAttribute="leading" id="SpR-xm-uJm"/>
+                                            <constraint firstAttribute="bottom" secondItem="Rds-re-RX9" secondAttribute="bottom" id="UJp-rY-jVC"/>
+                                            <constraint firstAttribute="trailing" secondItem="Rds-re-RX9" secondAttribute="trailing" id="jc3-gt-ABp"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="myImage" destination="Rds-re-RX9" id="kRV-RT-7XU"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="l8K-83-xcl" id="fr2-dO-adW"/>
+                                    <outlet property="delegate" destination="l8K-83-xcl" id="79c-33-NIc"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05h-mP-DRE">
+                                <rect key="frame" x="0.0" y="545" width="300" height="55"/>
+                                <state key="normal" title="Add Progress Pic"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b71-Qk-wTR">
+                                <rect key="frame" x="308" y="545" width="292" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="292" id="G10-kB-0Dx"/>
+                                    <constraint firstAttribute="height" constant="54" id="yes-x7-yhW"/>
+                                </constraints>
+                                <state key="normal" title="Take Progress Pic"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="05h-mP-DRE" firstAttribute="top" secondItem="0rG-mz-8XE" secondAttribute="bottom" constant="96" id="9CJ-91-3NR"/>
+                            <constraint firstAttribute="trailing" secondItem="b71-Qk-wTR" secondAttribute="trailing" id="9En-Oa-KiV"/>
+                            <constraint firstItem="0rG-mz-8XE" firstAttribute="leading" secondItem="IWD-wp-ag1" secondAttribute="leadingMargin" constant="61" id="BBd-Tv-B8e"/>
+                            <constraint firstItem="b71-Qk-wTR" firstAttribute="leading" secondItem="05h-mP-DRE" secondAttribute="trailing" constant="8" symbolic="YES" id="J2f-Bq-k6k"/>
+                            <constraint firstItem="05h-mP-DRE" firstAttribute="bottom" secondItem="tW2-XL-01T" secondAttribute="top" id="PcM-lm-Drg"/>
+                            <constraint firstItem="05h-mP-DRE" firstAttribute="top" secondItem="b71-Qk-wTR" secondAttribute="top" id="cOJ-hp-yDc"/>
+                            <constraint firstItem="0rG-mz-8XE" firstAttribute="centerX" secondItem="IWD-wp-ag1" secondAttribute="centerX" id="e6g-G4-b4d"/>
+                            <constraint firstItem="05h-mP-DRE" firstAttribute="centerY" secondItem="b71-Qk-wTR" secondAttribute="centerY" id="rgc-H8-cvj"/>
+                            <constraint firstItem="05h-mP-DRE" firstAttribute="leading" secondItem="IWD-wp-ag1" secondAttribute="leading" id="ss8-5k-ufo"/>
+                            <constraint firstItem="0rG-mz-8XE" firstAttribute="top" secondItem="n8C-M7-FbA" secondAttribute="bottom" constant="48" id="w7M-hU-1aE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="0rG-mz-8XE" id="TKn-aS-7wC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S0s-kH-qJ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2402" y="35"/>
+        </scene>
+    </scenes>
+</document>
